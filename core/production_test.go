@@ -26,16 +26,13 @@ func TestNonTerminalProduction(t *testing.T) {
 		t.Errorf("Problem with storing NonTerminalProduction.Left")
 	}
 
-	l := len(uut.Right)
-	if l != 2 {
-		t.Errorf("Invalid NonTerminalProduction.Right length: %v", l)
+	if uut.Right.First != NewNonTerminalSymbol(uint('B')) {
+		t.Errorf(
+			"Problem with storing NonTerminalProduction.Right.First")
 	}
 
-	if uut.Right[0] != NewNonTerminalSymbol(uint('B')) {
-		t.Errorf("Problem with storing NonTerminalProduction.Right[0]")
-	}
-
-	if uut.Right[1] != NewNonTerminalSymbol(uint('C')) {
-		t.Errorf("Problem with storing NonTerminalProduction.Right[1]")
+	if uut.Right.Second != NewNonTerminalSymbol(uint('C')) {
+		t.Errorf(
+			"Problem with storing NonTerminalProduction.Right.Second")
 	}
 }

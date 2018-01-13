@@ -27,3 +27,13 @@ type NonTerminalSymbol int
 func NewNonTerminalSymbol(id uint) NonTerminalSymbol {
 	return NonTerminalSymbol(id)
 }
+
+type NonTerminalSymbolPair struct {
+	First NonTerminalSymbol
+	Second NonTerminalSymbol
+}
+
+func NewNonTerminalSymbolPair(
+	first, second NonTerminalSymbol) NonTerminalSymbolPair {
+	return NonTerminalSymbolPair{first, second}
+}

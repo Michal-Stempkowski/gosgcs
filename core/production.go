@@ -15,7 +15,7 @@ func NewTerminalProduction(
 // NonTerminalProduction stores representation of grammar terminal production.
 type NonTerminalProduction struct {
 	Left  NonTerminalSymbol
-	Right [2]NonTerminalSymbol
+	Right NonTerminalSymbolPair
 }
 
 // NewNonTerminalProduction creates new instance of NonTerminalProduction.
@@ -23,5 +23,5 @@ func NewNonTerminalProduction(
 	left, rightA, rightB NonTerminalSymbol) NonTerminalProduction {
 	return NonTerminalProduction{
 		Left:  left,
-		Right: [2]NonTerminalSymbol{rightA, rightB}}
+		Right: NewNonTerminalSymbolPair(rightA, rightB)}
 }
