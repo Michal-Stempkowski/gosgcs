@@ -8,7 +8,7 @@ before_install:
   - go get -t -v ./...
 
 script:
-  - bash multiple_package_coverage_go_workaround.sh
+  - bash multiple_package_coverage_go_workaround
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
