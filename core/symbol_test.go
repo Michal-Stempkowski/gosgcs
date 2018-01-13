@@ -2,12 +2,12 @@ package core
 
 import "testing"
 
-const symbolID = int('a')
+const symbolID = uint('a')
 
 func TestTerminalSymbol(t *testing.T) {
 	uut := NewTerminalSymbol(symbolID)
 
-	if int(uut) != symbolID {
+	if int(uut) != int(symbolID) {
 		t.Errorf("TerminalSymbol should be aliased int")
 	}
 
@@ -20,7 +20,7 @@ func TestTerminalSymbol(t *testing.T) {
 func TestNonTerminalSymbol(t *testing.T) {
 	uut := NewNonTerminalSymbol(symbolID)
 
-	if int(uut) != symbolID {
+	if int(uut) != int(symbolID) {
 		t.Errorf("NewNonTerminalSymbol should be aliased int")
 	}
 

@@ -10,7 +10,7 @@ func TestSentence(t *testing.T) {
 
 	uut = NewSentence(NewTerminalSymbol(symbolID))
 
-	if len(uut) != 1 || int(uut[0]) != symbolID {
+	if len(uut) != 1 || int(uut[0]) != int(symbolID) {
 		t.Errorf("Sentence should be aliased slice")
 	}
 
