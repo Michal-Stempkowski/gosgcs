@@ -8,7 +8,7 @@ before_install:
   - go get -t -v ./...
 
 script:
-  - bash scripts/multiple_package_coverage_go_workaround
+  - go test -race -coverprofile=coverage.txt -covermode=atomic ./... || bash scripts/multiple_package_coverage_go_workaround
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
