@@ -2,12 +2,12 @@ package core
 
 import "testing"
 
-const symbolId = int('a')
+const symbolID = int('a')
 
 func TestTerminalSymbol(t *testing.T) {
-	uut := NewTerminalWymbol(symbolId)
+	uut := NewTerminalSymbol(symbolID)
 
-	if int(uut) != symbolId {
+	if int(uut) != symbolID {
 		t.Errorf("TerminalSymbol should be aliased int")
 	}
 }
@@ -18,9 +18,9 @@ func TestSentence(t *testing.T) {
 		t.Errorf("Empty Sentence should be aliased slice")
 	}
 
-	uut = NewSentence(NewTerminalWymbol(symbolId))
+	uut = NewSentence(NewTerminalSymbol(symbolID))
 
-	if len(uut) != 1 || int(uut[0]) != symbolId {
+	if len(uut) != 1 || int(uut[0]) != symbolID {
 		t.Errorf("Sentence should be aliased slice")
 	}
 
